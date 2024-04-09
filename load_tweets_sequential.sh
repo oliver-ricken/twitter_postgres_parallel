@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 files=$(find data/*)
 
@@ -6,21 +6,15 @@ echo '==========================================================================
 echo 'load denormalized'
 echo '================================================================================'
 time for file in $files; do
-    echo
-    # copy your solution to the twitter_postgres assignment here
+    time unzip -p "$file" | sed 's/\\u0000//g' | psql postgresql://postgres:pass    @localhost:2325/ -c "COPY tweets_jsonb (data) FROM STDIN csv quote e'\x01' delim    iter e'\x02';"
 done
 
 echo '================================================================================'
 echo 'load pg_normalized'
 echo '================================================================================'
-time for file in $files; do
-    echo
-    # copy your solution to the twitter_postgres assignment here
-done
+time python3 -u load_tweets.py --db=postgresql://postgres:pass@localhost:2326 -    -inputs $files
 
 echo '================================================================================'
 echo 'load pg_normalized_batch'
 echo '================================================================================'
-time for file in $files; do
-    python3 -u load_tweets_batch.py --db=postgresql://postgres:pass@localhost:3/ --inputs $file
-done
+python3 -u load_tweets_batch.py --db=postgresql://postgres:pass@localhost:2327/ --inputs $files
