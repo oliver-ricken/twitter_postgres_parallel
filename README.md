@@ -2,9 +2,9 @@
 
 |     | sequential | parallel |
 | --- | ---------- | -------- |
-| normalized (unbatched) | ![](https://github.com/mikeizbicki/twitter_postgres_parallel/workflows/tests_normalized_sequential/badge.svg) | ![](https://github.com/mikeizbicki/twitter_postgres_parallel/workflows/tests_normalized_parallel/badge.svg) |
-| normalized (batched) | ![](https://github.com/mikeizbicki/twitter_postgres_parallel/workflows/tests_normalizedbatch_sequential/badge.svg) |  ![](https://github.com/mikeizbicki/twitter_postgres_parallel/workflows/tests_normalizedbatch_parallel/badge.svg) |
-| denormalized | ![](https://github.com/mikeizbicki/twitter_postgres_parallel/workflows/tests_denormalized_sequential/badge.svg) | ![](https://github.com/mikeizbicki/twitter_postgres_parallel/workflows/tests_denormalized_parallel/badge.svg) |
+| normalized (unbatched) | [![](https://github.com/oliver-ricken/twitter_postgres_parallel/workflows/tests_normalized_sequential/badge.svg)](https://github.com/oliver-ricken/twitter_postgres_parallel/actions/workflows/tests_normalized.yml) | [![](https://github.com/oliver-ricken/twitter_postgres_parallel/workflows/tests_normalized_parallel/badge.svg)](https://github.com/oliver-ricken/twitter_postgres_parallel/actions/workflows/tests_normalized_parallel.yml) |
+| normalized (batched) | [![](https://github.com/oliver-ricken/twitter_postgres_parallel/workflows/tests_normalizedbatch_sequential/badge.svg)](https://github.com/oliver-ricken/twitter_postgres_parallel/actions/workflows/tests_normalized_batch.yml) | [![](https://github.com/oliver-ricken/twitter_postgres_parallel/workflows/tests_normalizedbatch_parallel/badge.svg)](https://github.com/oliver-ricken/twitter_postgres_parallel/actions/workflows/tests_normalized_batch_parallel.yml) |
+| denormalized | [![](https://github.com/oliver-ricken/twitter_postgres_parallel/workflows/tests_denormalized_sequential/badge.svg)](https://github.com/oliver-ricken/twitter_postgres_parallel/actions/workflows/tests_denormalized.yml) | [![](https://github.com/oliver-ricken/twitter_postgres_parallel/workflows/tests_denormalized_parallel/badge.svg)](https://github.com/oliver-ricken/twitter_postgres_parallel/actions/workflows/tests_denormalized_parallel.yml) |
 
 In this assignment, you will learn how to load data into postgres much faster using two techniques:
 1. batch loading (i.e. running the INSERT command on more than one row at a time)
