@@ -15,4 +15,4 @@ time echo "$files" | parallel sh load_normalized.sh
 echo '================================================================================'
 echo 'load pg_normalized_batch'
 echo '================================================================================'
-# FIXME: implement this with GNU parallel
+time echo "$files" | parallel sh load_normalized_batch.sh
